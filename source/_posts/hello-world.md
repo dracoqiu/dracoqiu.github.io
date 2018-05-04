@@ -2,8 +2,7 @@
 title: github + hexo 搭建个人博客
 categories: "Hexo教程" #文章分類目錄 可以省略
 tags:
-     - Hexo教程
-description: #你對本頁的描述 可以省略
+     - Hexo
 ---
 GitHub Pages 是通过我们网站托管和发布的公开网页。所以利用这个可以搭建个人博客。
 <!--more-->
