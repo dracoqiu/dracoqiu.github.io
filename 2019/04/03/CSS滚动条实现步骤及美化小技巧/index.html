@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="静然之旅" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="很多朋友在网页设计中要自定义滚动条样式的情景，滚动条的样式我们可以通过css来控制的，比如网易邮箱的滚动条样子很好看，就是利用的CSS来设置实现的。但是css控制的滚动条应该如何实现和隐藏呢？滚动条能不能换颜色或者做的更好看一些呢？下面通通告诉你。 你可以复习一下CSS overflow 属性的内容。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS滚动条实现步骤及美化小技巧">
+<meta property="og:url" content="http://yoursite.com/2019/04/03/CSS滚动条实现步骤及美化小技巧/index.html">
+<meta property="og:site_name" content="静然之旅">
+<meta property="og:description" content="很多朋友在网页设计中要自定义滚动条样式的情景，滚动条的样式我们可以通过css来控制的，比如网易邮箱的滚动条样子很好看，就是利用的CSS来设置实现的。但是css控制的滚动条应该如何实现和隐藏呢？滚动条能不能换颜色或者做的更好看一些呢？下面通通告诉你。 你可以复习一下CSS overflow 属性的内容。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/201611151617488929.png">
+<meta property="og:image" content="http://yoursite.com/images/201611151625519680.png">
+<meta property="og:updated_time" content="2019-04-26T14:22:38.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS滚动条实现步骤及美化小技巧">
+<meta name="twitter:description" content="很多朋友在网页设计中要自定义滚动条样式的情景，滚动条的样式我们可以通过css来控制的，比如网易邮箱的滚动条样子很好看，就是利用的CSS来设置实现的。但是css控制的滚动条应该如何实现和隐藏呢？滚动条能不能换颜色或者做的更好看一些呢？下面通通告诉你。 你可以复习一下CSS overflow 属性的内容。">
+<meta name="twitter:image" content="http://yoursite.com/images/201611151617488929.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/03/CSS滚动条实现步骤及美化小技巧/">
+
+
+
+
+
+  <title>CSS滚动条实现步骤及美化小技巧 | 静然之旅</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/dracoqiu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静然之旅</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/CSS滚动条实现步骤及美化小技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静然">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静然之旅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS滚动条实现步骤及美化小技巧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T20:23:08+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,303
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>很多朋友在网页设计中要自定义滚动条样式的情景，滚动条的样式我们可以通过css来控制的，比如网易邮箱的滚动条样子很好看，就是利用的CSS来设置实现的。但是css控制的滚动条应该如何实现和隐藏呢？滚动条能不能换颜色或者做的更好看一些呢？下面通通告诉你。</p>
+<p>你可以复习一下CSS overflow 属性的内容。<br><a id="more"></a><br>1、overflow-y : 设置当对象的内容超过其指定高度时如何管理内容；overflow-x : 设置当对象的内容超过其指定宽度时如何管理内容。</p>
+<p>参数:<br>visible：扩大面积以显示所有内容</p>
+<p>auto：仅当内容超出限定值时添加滚动条</p>
+<p>hidden：总是隐藏滚动条</p>
+<p>scroll：总是显示滚动条</p>
+<p>2、height : 设置滚动条的高度（修改其后数值即可）。</p>
+<p>3、滚动条颜色参数设置：</p>
+<p>scrollbar-3d-light-color 设置或检索滚动条亮边框颜色</p>
+<p>scrollbar-highlight-color 设置或检索滚动条3D界面的亮边（ThreedHighlight）颜色</p>
+<p>scrollbar-face-color  设置或检索滚动条3D表面（ThreedFace）的颜色</p>
+<p>scrollbar-arrow-color  设置或检索滚动条方向箭头的颜色</p>
+<p>scrollbar-shadow-color  设置或检索滚动条3D界面的暗边（ThreedShadow）颜色</p>
+<p>scrollbar-dark-shadow-color 设置或检索滚动条暗边框（ThreedDarkShadow）颜色</p>
+<p>scrollbar-base-color  设置或检索滚动条基准颜色</p>
+<p>设置滚动条样式<br>在原来的html的时候，我们可以这样定义整个页面的滚动条<br>body{<br>scrollbar-3dlight-color:#D4D0C8; /<em>- 最外左 -</em>/<br>   scrollbar-highlight-color:#fff; /<em>- 左二 -</em>/<br>   scrollbar-face-color:#E4E4E4; /<em>- 面子 -</em>/<br>   scrollbar-arrow-color:#666; /<em>- 箭头 -</em>/<br>   scrollbar-shadow-color:#808080; /<em>- 右二 -</em>/<br>   scrollbar-darkshadow-color:#D7DCE0; /<em>- 右一 -</em>/<br>   scrollbar-base-color:#D7DCE0; /<em>- 基色 -</em>/<br>   scrollbar-track-color:#;/<em>- 滑道 -</em>/<br>}</p>
+<p>但是同样的代码，我们应用在 xhtml下就不起作用了，我相信好多好朋友也遇到过同样的问题<br>那么怎么才能在xhtml下应用滚动条样式呢？看下列代码<br>html{<br>scrollbar-3dlight-color:#D4D0C8; /<em>- 最外左 -</em>/<br>   scrollbar-highlight-color:#fff; /<em>- 左二 -</em>/<br>   scrollbar-face-color:#E4E4E4; /<em>- 面子 -</em>/<br>   scrollbar-arrow-color:#666; /<em>- 箭头 -</em>/<br>   scrollbar-shadow-color:#808080; /<em>- 右二 -</em>/<br>   scrollbar-darkshadow-color:#D7DCE0; /<em>- 右一 -</em>/<br>   scrollbar-base-color:#D7DCE0; /<em>- 基色 -</em>/<br>   scrollbar-track-color:#;/<em>- 滑道 -</em>/<br>}</p>
+<p>这段代码和上一段唯一的不同就是在css定义的元素上，一个是body一个是html。我们再测试一下，把html页面的”body”修改成”html”测试一下，发现依然可以实现效果。那到底是为什么呢？</p>
+<p>从字面上来看，xhtml比html多一个x,那么这个x其实也就是xml,为什么要加一个xml在里面？其实最根本的原因就是要让html更加结构化标准化（因为html实在是太烂）。我们在html里面定义的是body，因为html不是很标准所以这样可以生效，而在xhtml里面这样就不行了，我看看那个图很明显，body标签本身不是根元素，只有html才是根元素，而页面的滚动条也是属于根元素的，所以这就是我们为什么定义body没有效果的原因，因为我们定义的只是一个子原素。ok，我们知道了原理，来做一个试验如果把定义”body”或”xhtml”换成”<em>“，
+</em>{<br>scrollbar-3dlight-color:#D4D0C8;<br>   scrollbar-highlight-color:#fff;<br>   scrollbar-face-color:#E4E4E4;<br>   scrollbar-arrow-color:#666;<br>   scrollbar-shadow-color:#808080;<br>   scrollbar-darkshadow-color:#D7DCE0;<br>   scrollbar-base-color:#D7DCE0;<br>   scrollbar-track-color:#;<br>}</p>
+<p>在html和xhtml都通过，因为*就是定义页面上的任何标签当然也包括了“html”这个标签。</p>
+<p>(ps:其实与其说是html与xhtml的区别到不如说是有无XHTML 1.0 transitional doctype的区别，但是如果你把页面的XHTML 1.0 transitional doctype去掉的话，那么这个页面就没有doctype，默认的显示方式就是html4.01,不过你要把XHTML 1.0 transitional doctype修改成HTML 4.01 doctype同样页面定义body也不会有效果的，虽然这个页面的标准是html 4.01)</p>
+<p>css隐藏滚动条(横向,坚向)<br>网上都说使用overflow-y:hiddencss可以隐藏滚动条，但是只能针对div元素，并不能隐藏浏览器，而一些资料说 <boby>里加入scroll=”no”，可隐藏滚动条；在<boby>里加入style=”overflow-x:hidden”，可隐藏水平滚动条；加入style=”overflow-y:hidden”，可隐藏垂直滚动条。</boby></boby></p>
+<p>1、完全隐藏</p>
+<p>　　在里加入scroll=”no”，可隐藏滚动条;</p>
+<p>2、在不需要时隐藏</p>
+<p>　　指当浏览器窗口宽度或高度大于页面的宽或高时，不显示滚动条;反之，则显示;</p>
+<p>3、样式表方法</p>
+<p>　　在里加入style=”overflow-x:hidden”，可隐藏水平滚动条;</p>
+<p>　　加入style=”overflow-y:hidden”，可隐藏垂直滚动条。</p>
+<p>body{ overflow-x:hidden; } 在标准 DTD 下是不可以的</p>
+<p>html { overflow: scroll; }</p>
+<p>强制隐藏滚动条:</p>
+<p>html { overflow: hidden; }</p>
+<p>隐藏IE的水平滚动条:</p>
+<p>html { overflow-x: hidden; }</p>
+<p>隐藏IE的垂直滚动条:</p>
+<p>html { overflow-y: hidden; }</p>
+<p>强制显示IE的水平滚动条:</p>
+<p>html { overflow-x: scroll; }</p>
+<p>强制显示IE的垂直滚动条:</p>
+<p>html { overflow-y: scroll; }</p>
+<p>强制显示Mozilla的水平滚动条:</p>
+<p>html { overflow:-moz-scrollbars-horizontal; }</p>
+<p>注意: 仅仅强制显示水平滚动条. 也就是说, 即使需要显示垂直滚动条时, 垂直滚动条也不会出现.</p>
+<p>强制显示Mozilla的垂直滚动条:</p>
+<p>html { overflow:-moz-scrollbars-vertical; }</p>
+<p>注意: 仅仅强制显示垂直滚动条. 也就是说, 即使需要显示水平滚动条时, 水平滚动条也不会出现.</p>
+<p><strong>最终的解决办法：</strong><br>在页面添加:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">html &#123; overflow-x:hidden; <span class="comment">//隐藏水平滚动条overflow-y:hidden;//隐藏垂直滚动条&#125;</span></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>CSS怎么美化滚动条<br>各种浏览器对CSS滚动条的支持情况：</p>
+<p>这里说的Webkit浏览器包括谷歌浏览器，苹果公司的Safari浏览器，以及最新的Opera浏览器。这些浏览器加起来占有超过半数的桌面浏览器市场份额。对于移动端浏览器，基本上是谷歌浏览器和Safari浏览器的天下。唯一的遗憾是火狐浏览器，至今没有对CSS滚动条属性做任何的改进。至于IE浏览器，我们期待吧。</p>
+<p>鉴于目前浏览器市场的格局，我们很有信心相信CSS滚动条美化功能会有很好的很光明的前景。</p>
+<p>很多年前谷歌浏览器就已经开始支持对滚动条的CSS美化。这些Webkit浏览器专属的CSS属性需要使用-webkit-浏览器引擎前缀，我们在这里将只会使用一些基本的CSS滚动条属性，在代码里会增加一些必要的解释说明。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">::-webkit-scrollbar &#123;</span><br><span class="line">    width: <span class="number">15</span>px;</span><br><span class="line">&#125; <span class="comment">/* 这是针对缺省样式 (必须的) */</span></span><br></pre></td></tr></table></figure></p>
+<p>当CSS中出现伪元素样式时，Webkit引擎将会关闭它的缺省滚动条样式输出，只使用CSS里提供的样式信息。</p>
+<p>这里是其它一些伪元素样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">::-webkit-scrollbar-track &#123;</span><br><span class="line">      background-color: #b46868;</span><br><span class="line">&#125; /* 滚动条的滑轨背景颜色 */</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-thumb &#123;</span><br><span class="line">      background-color: rgba(0, 0, 0, 0.2);</span><br><span class="line">&#125; /* 滑块颜色 */</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-button &#123;</span><br><span class="line">      background-color: #7c2929;</span><br><span class="line">&#125; /* 滑轨两头的监听按钮颜色 */</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-corner &#123;</span><br><span class="line">      background-color: black;</span><br><span class="line">&#125; /* 横向滚动条和纵向滚动条相交处尖角的颜色 */</span><br></pre></td></tr></table></figure></p>
+<p>加上了这些CSS属性，你将会看到下面的效果(再次提醒：你需要使用Webkit浏览器，比如谷歌浏览器才能看到效果)。<br><img src="/images/201611151617488929.png" alt="1"><br>谷歌浏览器的用户是最幸福的。但我们也不能放弃火狐浏览器和IE浏览器用户。对于这些浏览器，有一个非常有效的补救方案，就是使用javascript插件。网上有不少人推荐一个由Kelvin Luck开发的一个jQuery插件：jScrollPane。但也有人评论这个插件是“PITA”，我翻了一下字典，发现“PITA”中文意思是“让人蛋疼”。经过试用，感到它的确是让人蛋疼。不推荐使用它。我发现了另外一个插件malihu-custom-scrollbar-plugin，感觉相当不错，它的用法是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css&quot;&gt;</span><br><span class="line">&lt;!-- latest jQuery direct from google&apos;s CDN --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-migrate-1.2.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">if (!$.browser.webkit) &#123;</span><br><span class="line"></span><br><span class="line">    $.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default</span><br><span class="line">    $.mCustomScrollbar.defaults.axis=&quot;yx&quot;; //enable 2 axis scrollbars by default</span><br><span class="line"></span><br><span class="line">    $(&quot;.container&quot;).mCustomScrollbar(&#123;theme:&quot;dark&quot;&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>已经有很多网站都使用了这些滚动条的CSS美化技巧，特别是谷歌的一些应用和网站上，比如Gmail和Google+。相信很快火狐浏览器和IE浏览器也会提供自己的解决方案。<br>用CSS调整滚动条配色<br>IE浏览器可以通过调整CSS的方式，来给滚动条换色。</p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.uicss-cn</span><br><span class="line">&#123;</span><br><span class="line">height:580px;overflow-y: scroll;</span><br><span class="line">scrollbar-face-color:#EAEAEA;</span><br><span class="line">scrollbar-shadow-color:#EAEAEA;</span><br><span class="line">scrollbar-highlight-color:#EAEAEA;</span><br><span class="line">scrollbar-3dlight-color:#EAEAEA;</span><br><span class="line">scrollbar-darkshadow-color:#697074;</span><br><span class="line">scrollbar-track-color:#F7F7F7;</span><br><span class="line">scrollbar-arrow-color:#666666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>具体样式对应的滚动条区域如图所示：<br><img src="/images/201611151625519680.png" alt="1"></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/如何用CSS3实现瀑布流效果/" rel="next" title="如何用CSS3实现瀑布流效果">
+                <i class="fa fa-chevron-left"></i> 如何用CSS3实现瀑布流效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/03/CSS3滚动条美化CSS3滚动条皮肤/" rel="prev" title="CSS3滚动条美化CSS3滚动条皮肤">
+                CSS3滚动条美化CSS3滚动条皮肤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjE2NC8xMjY5OQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="静然">
+            
+              <p class="site-author-name" itemprop="name">静然</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静然</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

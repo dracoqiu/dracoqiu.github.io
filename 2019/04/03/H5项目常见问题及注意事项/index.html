@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="静然之旅" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="H5项目常见问题及注意事项">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5项目常见问题及注意事项">
+<meta property="og:url" content="http://yoursite.com/2019/04/03/H5项目常见问题及注意事项/index.html">
+<meta property="og:site_name" content="静然之旅">
+<meta property="og:description" content="H5项目常见问题及注意事项">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-26T14:22:38.133Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H5项目常见问题及注意事项">
+<meta name="twitter:description" content="H5项目常见问题及注意事项">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/03/H5项目常见问题及注意事项/">
+
+
+
+
+
+  <title>H5项目常见问题及注意事项 | 静然之旅</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/dracoqiu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静然之旅</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/H5项目常见问题及注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静然">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静然之旅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">H5项目常见问题及注意事项</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T20:32:54+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,953
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>H5项目常见问题及注意事项<br><a id="more"></a></p>
+<h3 id="Meta基础知识："><a href="#Meta基础知识：" class="headerlink" title="Meta基础知识："></a>Meta基础知识：</h3><h4 id="H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"><a href="#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面" class="headerlink" title="H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"></a>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//一、HTML页面结构</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">// width    设置viewport宽度，为一个正整数，或字符串‘device-width’</span><br><span class="line"></span><br><span class="line">// height   设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置</span><br><span class="line"></span><br><span class="line">// initial-scale    默认缩放比例，为一个数字，可以带小数</span><br><span class="line"></span><br><span class="line">// minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数</span><br><span class="line"></span><br><span class="line">// maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数</span><br><span class="line"></span><br><span class="line">// user-scalable    是否允许手动缩放</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//二、JS动态判断</span><br><span class="line"></span><br><span class="line">var phoneWidth =  parseInt(window.screen.width);</span><br><span class="line"></span><br><span class="line">var phoneScale = phoneWidth/640;</span><br><span class="line"></span><br><span class="line">var ua = navigator.userAgent;</span><br><span class="line"></span><br><span class="line">if (/Android (\d+\.\d+)/.test(ua))&#123;</span><br><span class="line"></span><br><span class="line">    var version = parseFloat(RegExp.$1);</span><br><span class="line"></span><br><span class="line">    if(version&gt;2.3)&#123;</span><br><span class="line"></span><br><span class="line">        document.write('<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi"</span>&gt;</span>');</span><br><span class="line"></span><br><span class="line">    &#125;else&#123;</span><br><span class="line"></span><br><span class="line">        document.write('<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=640, target-densitydpi=device-dpi"</span>&gt;</span>');</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125; else &#123;</span><br><span class="line"></span><br><span class="line">    document.write('<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=640, user-scalable=no, target-densitydpi=device-dpi"</span>&gt;</span>');</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="空白页基本meta标签"><a href="#空白页基本meta标签" class="headerlink" title="空白页基本meta标签"></a>空白页基本meta标签</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置缩放 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, user-scalable=no, minimal-ui"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果） --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 仅针对IOS的Safari顶端状态条的样式（可选default/black/black-translucent ） --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span><span class="attr">content</span>=<span class="string">"telephone=no, email=no"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="其他meta标签"><a href="#其他meta标签" class="headerlink" title="其他meta标签"></a>其他meta标签</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 启用360浏览器的极速模式(webkit) --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"renderer"</span> <span class="attr">content</span>=<span class="string">"webkit"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 避免IE使用兼容模式 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"HandheldFriendly"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 微软的老式浏览器 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"MobileOptimized"</span> <span class="attr">content</span>=<span class="string">"320"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- uc强制竖屏 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"screen-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- QQ强制竖屏 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-orientation"</span> <span class="attr">content</span>=<span class="string">"portrait"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- UC强制全屏 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"full-screen"</span> <span class="attr">content</span>=<span class="string">"yes"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- QQ强制全屏 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-fullscreen"</span> <span class="attr">content</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- UC应用模式 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"browsermode"</span> <span class="attr">content</span>=<span class="string">"application"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- QQ应用模式 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"x5-page-mode"</span> <span class="attr">content</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- windows phone 点击无高光 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="常见问题："><a href="#常见问题：" class="headerlink" title="常见问题："></a>常见问题：</h3><h4 id="移动端如何定义字体font-family"><a href="#移动端如何定义字体font-family" class="headerlink" title="移动端如何定义字体font-family"></a>移动端如何定义字体font-family</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">@ --------------------------------------中文字体的英文名称</span><br><span class="line"></span><br><span class="line">@ 宋体      SimSun</span><br><span class="line"></span><br><span class="line">@ 黑体      SimHei</span><br><span class="line"></span><br><span class="line">@ 微信雅黑   Microsoft Yahei</span><br><span class="line"></span><br><span class="line">@ 微软正黑体 Microsoft JhengHei</span><br><span class="line"></span><br><span class="line">@ 新宋体    NSimSun</span><br><span class="line"></span><br><span class="line">@ 新细明体  MingLiU</span><br><span class="line"></span><br><span class="line">@ 细明体    MingLiU</span><br><span class="line"></span><br><span class="line">@ 标楷体    DFKai-SB</span><br><span class="line"></span><br><span class="line">@ 仿宋     FangSong</span><br><span class="line"></span><br><span class="line">@ 楷体     KaiTi</span><br><span class="line"></span><br><span class="line">@ 仿宋_GB2312  FangSong_GB2312</span><br><span class="line"></span><br><span class="line">@ 楷体_GB2312  KaiTi_GB2312</span><br><span class="line"></span><br><span class="line">@</span><br><span class="line"></span><br><span class="line">@ 说明：中文字体多数使用宋体、雅黑，英文用Helvetica</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">body &#123; font-family: Microsoft Yahei,SimSun,Helvetica; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="打电话发短信写邮件怎么实现"><a href="#打电话发短信写邮件怎么实现" class="headerlink" title="打电话发短信写邮件怎么实现"></a>打电话发短信写邮件怎么实现</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">// 一、打电话</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"tel:0755-10086"</span>&gt;</span>打电话给:0755-10086<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//  二、发短信，winphone系统无效</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"sms:10086"</span>&gt;</span>发短信给: 10086<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 三、写邮件</span><br><span class="line"></span><br><span class="line">//注：在添加这些功能时，第一个功能以"?"开头，后面的以"&amp;"开头</span><br><span class="line"></span><br><span class="line">//1.普通邮件</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//2.收件地址后添加?cc=开头，可添加抄送地址（Android存在兼容问题）</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?cc=zhangqian0406@yeah.net"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//3.跟着抄送地址后，写上&amp;bcc=,可添加密件抄送地址（Android存在兼容问题）</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?cc=zhangqian0406@yeah.net&amp;bcc=384900096@qq.com"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//4.包含多个收件人、抄送、密件抄送人，用分号(;)隔开多个邮件人的地址</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com;384900096@qq.com"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//5.包含主题，用?subject=</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?subject=邮件主题"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//6.包含内容，用?body=;如内容包含文本，使用%0A给文本换行</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?body=邮件主题内容%0A腾讯诚信%0A期待您的到来"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//7.内容包含链接，含http(s)://等的文本自动转化为链接</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?body=http://www.baidu.com"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//8.内容包含图片（PC不支持）</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com?body=&lt;img src='images/1.jpg' /&gt;"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//9.完整示例</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:863139978@qq.com;384900096@qq.com?cc=zhangqian0406@yeah.net&amp;bcc=993233461@qq.com&amp;subject=[邮件主题]&amp;body=腾讯诚邀您参与%0A%0Ahttp://www.baidu.com%0A%0A&lt;img src='images/1.jpg' /&gt;"</span>&gt;</span>点击我发邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="移动端touch事件（区分webkit和winphone）"><a href="#移动端touch事件（区分webkit和winphone）" class="headerlink" title="移动端touch事件（区分webkit和winphone）"></a>移动端touch事件（区分webkit和winphone）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/* 当用户手指放在移动设备在屏幕上滑动会触发的touch事件 */</span><br><span class="line"></span><br><span class="line">// 以下支持webkit</span><br><span class="line"></span><br><span class="line">touchstart——当手指触碰屏幕时候发生。不管当前有多少只手指</span><br><span class="line"></span><br><span class="line">touchmove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动</span><br><span class="line"></span><br><span class="line">touchend——当手指离开屏幕时触发</span><br><span class="line"></span><br><span class="line">touchcancel——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//TouchEvent说明：</span><br><span class="line"></span><br><span class="line">touches：屏幕上所有手指的信息</span><br><span class="line"></span><br><span class="line">targetTouches：手指在目标区域的手指信息</span><br><span class="line"></span><br><span class="line">changedTouches：最近一次触发该事件的手指信息</span><br><span class="line"></span><br><span class="line">touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//参数信息(changedTouches[0])</span><br><span class="line"></span><br><span class="line">clientX、clientY在显示区的坐标</span><br><span class="line"></span><br><span class="line">target：当前元素</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//事件响应顺序</span><br><span class="line"></span><br><span class="line">ontouchstart  &gt; ontouchmove  &gt; ontouchend &gt; onclick</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 以下支持winphone 8</span><br><span class="line"></span><br><span class="line">MSPointerDown——当手指触碰屏幕时候发生。不管当前有多少只手指</span><br><span class="line"></span><br><span class="line">MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html&#123;-ms-touch-action: none;&#125;可以阻止默认情况的发生：阻止页面滚动</span><br><span class="line"></span><br><span class="line">MSPointerUp——当手指离开屏幕时触发</span><br></pre></td></tr></table></figure>
+<h4 id="移动端click屏幕产生200-300ms的延时响应"><a href="#移动端click屏幕产生200-300ms的延时响应" class="headerlink" title="移动端click屏幕产生200-300ms的延时响应"></a>移动端click屏幕产生200-300ms的延时响应</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">说明：移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">以下是历史原因，来源一个公司内一个同事的分享：</span><br><span class="line"></span><br><span class="line">2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//解决方案：</span><br><span class="line"></span><br><span class="line">fastclick可以解决在手机上点击事件的300ms延迟</span><br><span class="line"></span><br><span class="line">zepto的touch模块，tap事件也是为了解决在click的延迟问题</span><br></pre></td></tr></table></figure>
+<h4 id="Rentina显示屏原理及设计方案"><a href="#Rentina显示屏原理及设计方案" class="headerlink" title="Rentina显示屏原理及设计方案"></a>Rentina显示屏原理及设计方案</h4><p>说明：retina屏是一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，苹果设备的retina显示屏中，像素点1个变为4个。<br>在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍。<br>那么，前端的应对方案是：设计稿切出来的图片长宽保证为偶数，并使用backgroud-size把图片缩小为原来的1/2<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//例如图片宽高为：200px*200px，那么写法如下</span><br><span class="line"></span><br><span class="line">.css&#123;width:100px;height:100px;background-size:100px 100px;&#125;</span><br><span class="line"></span><br><span class="line">//其它元素的取值为原来的1/2，例如视觉稿40px的字体，使用样式的写法为20px</span><br><span class="line"></span><br><span class="line">.css&#123;font-size:20px&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//image-set设计Rentina背景图</span><br><span class="line"></span><br><span class="line">image-set,webkit私有属性，也是CSS4的属性，为解决Rentina屏幕下的图像而生。</span><br><span class="line"></span><br><span class="line">.css &#123;</span><br><span class="line"></span><br><span class="line">    background: url(images/bg.jpg) no-repeat center;</span><br><span class="line"></span><br><span class="line">    background: -webkit-image-set(</span><br><span class="line"></span><br><span class="line">    url(images/bg.jpg) 1x,     //支持image-set普通屏</span><br><span class="line"></span><br><span class="line">    url(images/bg-2x.jpg) 2x); //支持image-set的Rentinan</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="点击元素产生背景或边框怎么去掉"><a href="#点击元素产生背景或边框怎么去掉" class="headerlink" title="点击元素产生背景或边框怎么去掉"></a>点击元素产生背景或边框怎么去掉</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置-webkit-tap-highlight-color的alpha值为0去除灰色半透明遮罩；</span><br><span class="line"></span><br><span class="line">//android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置-webkit-tap-highlight-color的alpha值为0去除部分机器自带的效果；</span><br><span class="line"></span><br><span class="line">//winphone系统,点击标签产生的灰色半透明背景，能通过设置<span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span>去掉；</span><br><span class="line"></span><br><span class="line">//特殊说明：有些机型去除不了，如小米2。对于按钮类还有个办法，不使用a或者input标签，直接用div标签</span><br><span class="line"></span><br><span class="line">a,button,input,textarea &#123;</span><br><span class="line"></span><br><span class="line">    -webkit-tap-highlight-color: rgba(0,0,0,0);</span><br><span class="line"></span><br><span class="line">    -webkit-user-modify:read-write-plaintext-only; //-webkit-user-modify有个副作用，就是输入法不再能够输入多个字符</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 也可以</span><br><span class="line"></span><br><span class="line">* &#123; -webkit-tap-highlight-color: rgba(0,0,0,0); &#125;</span><br><span class="line"></span><br><span class="line">//winphone下</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="移动端字体单位font-size选择px还是rem"><a href="#移动端字体单位font-size选择px还是rem" class="headerlink" title="移动端字体单位font-size选择px还是rem"></a>移动端字体单位font-size选择px还是rem</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 如需适配多种移动设备，建议使用rem。以下为参考值：</span><br><span class="line"></span><br><span class="line">html &#123; font-size: 62.5%; &#125;   //10*16 = 62.5%</span><br><span class="line"></span><br><span class="line">//设置12px字体   这里注意在rem前要加上对应的px值，解决不支持rem的浏览器的兼容问题，做到优雅降级</span><br><span class="line"></span><br><span class="line">body &#123; font-size:12px; font-size:1.2rem; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="超实用的CSS样式"><a href="#超实用的CSS样式" class="headerlink" title="超实用的CSS样式"></a>超实用的CSS样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">//去掉webkit的滚动条——display: none;</span><br><span class="line"></span><br><span class="line">//其他参数</span><br><span class="line"></span><br><span class="line">::-webkit-scrollba //滚动条整体部分</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-thumb   //滚动条内的小方块</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-track   //滚动条轨道</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-button  //滚动条轨道两端按钮</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-track-piece  //滚动条中间部分，内置轨道</span><br><span class="line"></span><br><span class="line">::-webkit-scrollbar-corner       //边角，两个滚动条交汇处</span><br><span class="line"></span><br><span class="line">::-webkit-resizer            //两个滚动条的交汇处上用于通过拖动调整元素大小的小控件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 禁止长按链接与图片弹出菜单</span><br><span class="line"></span><br><span class="line">a,img &#123; -webkit-touch-callout: none &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 禁止ios和android用户选中文字</span><br><span class="line"></span><br><span class="line">html,body &#123;-webkit-user-select:none; user-select: none; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 改变输入框placeholder的颜色值</span><br><span class="line"></span><br><span class="line">::-webkit-input-placeholder &#123; /* WebKit browsers */</span><br><span class="line"></span><br><span class="line">color: #999; &#125;</span><br><span class="line"></span><br><span class="line">:-moz-placeholder &#123; /* Mozilla Firefox 4 to 18 */</span><br><span class="line"></span><br><span class="line">color: #999; &#125;</span><br><span class="line"></span><br><span class="line">::-moz-placeholder &#123; /* Mozilla Firefox 19+ */</span><br><span class="line"></span><br><span class="line">color: #999; &#125;</span><br><span class="line"></span><br><span class="line">:-ms-input-placeholder &#123; /* Internet Explorer 10+ */</span><br><span class="line"></span><br><span class="line">color: #999; &#125;</span><br><span class="line"></span><br><span class="line">input:focus::-webkit-input-placeholder&#123; color:#999; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// android上去掉语音输入按钮</span><br><span class="line"></span><br><span class="line">input::-webkit-input-speech-button &#123;display: none&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 阻止windows Phone的默认触摸事件</span><br><span class="line"></span><br><span class="line">/*说明：winphone下默认触摸事件事件使用e.preventDefault是无效的，可通过样式来禁用，如：*/</span><br><span class="line"></span><br><span class="line">html &#123; -ms-touch-action:none; &#125; //禁止winphone默认触摸事件</span><br></pre></td></tr></table></figure>
+<h4 id="取消input在ios下，输入的时候英文首字母的默认大写"><a href="#取消input在ios下，输入的时候英文首字母的默认大写" class="headerlink" title="取消input在ios下，输入的时候英文首字母的默认大写"></a>取消input在ios下，输入的时候英文首字母的默认大写</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="手机拍照和上传图片"><a href="#手机拍照和上传图片" class="headerlink" title="手机拍照和上传图片"></a>手机拍照和上传图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//IOS有拍照、录像、选取本地图片功能，部分Android只有选择本地图片功能。Winphone不支持</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;file&quot; accept=&quot;images/*&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;file&quot; accept=&quot;video/*&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="屏幕旋转的事件和样式"><a href="#屏幕旋转的事件和样式" class="headerlink" title="屏幕旋转的事件和样式"></a>屏幕旋转的事件和样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//JS处理</span><br><span class="line"></span><br><span class="line">function orientInit()&#123;</span><br><span class="line"></span><br><span class="line">    var orientChk = document.documentElement.clientWidth &gt; document.documentElement.clientHeight?&apos;landscape&apos;:&apos;portrait&apos;;</span><br><span class="line"></span><br><span class="line">    if(orientChk ==&apos;lapdscape&apos;)&#123;</span><br><span class="line"></span><br><span class="line">        //这里是横屏下需要执行的事件</span><br><span class="line"></span><br><span class="line">    &#125;else&#123;</span><br><span class="line"></span><br><span class="line">        //这里是竖屏下需要执行的事件</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">orientInit();</span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;onorientationchange&apos; in window?&apos;orientationchange&apos;:&apos;resize&apos;, function()&#123;</span><br><span class="line"></span><br><span class="line">    setTimeout(orientInit, 100);</span><br><span class="line"></span><br><span class="line">&#125;,false)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//CSS处理</span><br><span class="line"></span><br><span class="line">//竖屏时样式</span><br><span class="line"></span><br><span class="line">@media all and (orientation:portrait)&#123;   &#125;</span><br><span class="line"></span><br><span class="line">//横屏时样式</span><br><span class="line"></span><br><span class="line">@media all and (orientation:landscape)&#123;   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="audio元素和video元素在ios和andriod中无法自动播放"><a href="#audio元素和video元素在ios和andriod中无法自动播放" class="headerlink" title="audio元素和video元素在ios和andriod中无法自动播放"></a>audio元素和video元素在ios和andriod中无法自动播放</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">//音频，写法一</span><br><span class="line"></span><br><span class="line">&lt;audio src=&quot;music/bg.mp3&quot; autoplay loop controls&gt;你的浏览器还不支持哦&lt;/audio&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//音频，写法二</span><br><span class="line"></span><br><span class="line">&lt;audio controls=&quot;controls&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;source src=&quot;music/bg.ogg&quot; type=&quot;audio/ogg&quot;&gt;&lt;/source&gt;</span><br><span class="line"></span><br><span class="line">    &lt;source src=&quot;music/bg.mp3&quot; type=&quot;audio/mpeg&quot;&gt;&lt;/source&gt;</span><br><span class="line"></span><br><span class="line">    优先播放音乐bg.ogg，不支持在播放bg.mp3</span><br><span class="line"></span><br><span class="line">&lt;/audio&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//JS绑定自动播放（操作window时，播放音乐）</span><br><span class="line"></span><br><span class="line">$(window).one(&apos;touchstart&apos;, function()&#123;</span><br><span class="line"></span><br><span class="line">    music.play();</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//微信下兼容处理</span><br><span class="line"></span><br><span class="line">document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function () &#123;</span><br><span class="line"></span><br><span class="line">    music.play();</span><br><span class="line"></span><br><span class="line">&#125;, false);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//小结</span><br><span class="line"></span><br><span class="line">//1.audio元素的autoplay属性在IOS及Android上无法使用，在PC端正常</span><br><span class="line"></span><br><span class="line">//2.audio元素没有设置controls时，在IOS及Android会占据空间大小，而在PC端Chrome是不会占据任何空间</span><br></pre></td></tr></table></figure>
+<h4 id="重力感应事件"><a href="#重力感应事件" class="headerlink" title="重力感应事件"></a>重力感应事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">// 运用HTML5的deviceMotion，调用重力感应事件</span><br><span class="line"></span><br><span class="line">if(window.DeviceMotionEvent)&#123;</span><br><span class="line"></span><br><span class="line">    document.addEventListener(&apos;devicemotion&apos;, deviceMotionHandler, false)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var speed = 30;</span><br><span class="line"></span><br><span class="line">var x = y = z = lastX = lastY = lastZ = 0;</span><br><span class="line"></span><br><span class="line">function deviceMotionHandler(eventData)&#123;</span><br><span class="line"></span><br><span class="line">    var acceleration = event.accelerationIncludingGravity;</span><br><span class="line"></span><br><span class="line">    x = acceleration.x;</span><br><span class="line"></span><br><span class="line">    y = acceleration.y;</span><br><span class="line"></span><br><span class="line">    z = acceleration.z;</span><br><span class="line"></span><br><span class="line">    if(Math.abs(x-lastX)&gt;speed || Math.abs(y-lastY)&gt;speed || Math.abs(z-lastZ)&gt;speed )&#123;</span><br><span class="line"></span><br><span class="line">        //这里是摇动后要执行的方法</span><br><span class="line"></span><br><span class="line">        yaoAfter();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    lastX = x;</span><br><span class="line"></span><br><span class="line">    lastY = y;</span><br><span class="line"></span><br><span class="line">    lastZ = z;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function yaoAfter()&#123;</span><br><span class="line"></span><br><span class="line">    //do something</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整"><a href="#微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整" class="headerlink" title="微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整"></a>微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//以下代码可使Android机页面不再受用户字体缩放强制改变大小，但是会有1S左右延时，期间可以考虑loading来处理</span><br><span class="line"></span><br><span class="line">if (typeof(WeixinJSBridge) == &quot;undefined&quot;) &#123;</span><br><span class="line"></span><br><span class="line">    document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function (e) &#123;</span><br><span class="line"></span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line"></span><br><span class="line">            WeixinJSBridge.invoke(&apos;setFontSizeCallback&apos;, &#123; &apos;fontSize&apos;:0&#125;, function(res)&#123;</span><br><span class="line"></span><br><span class="line">                alert(JSON.stringify(res));</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">        &#125;, 0)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;else&#123;</span><br><span class="line"></span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line"></span><br><span class="line">        WeixinJSBridge.invoke(&apos;setFontSizeCallback&apos;, &#123; &apos;fontSize&apos;:0&#125;, function(res)&#123;</span><br><span class="line"></span><br><span class="line">            alert(JSON.stringify(res));</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;, 0)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//IOS下可使用 -webkit-text-size-adjust禁止用户调整字体大小</span><br><span class="line"></span><br><span class="line">body &#123; -webkit-text-size-adjust:100%!important; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//最好的解决方案：最好使用rem或百分比布局</span><br></pre></td></tr></table></figure>
+<h4 id="定位的坑"><a href="#定位的坑" class="headerlink" title="定位的坑"></a>定位的坑</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">//fixed定位</span><br><span class="line"></span><br><span class="line">//1.ios下fixed元素容易定位出错，软键盘弹出时，影响fixed元素定位</span><br><span class="line"></span><br><span class="line">//2.android下fixed表现要比iOS更好，软键盘弹出时，不会影响fixed元素定位</span><br><span class="line"></span><br><span class="line">//3.ios4下不支持position:fixed</span><br><span class="line"></span><br><span class="line">//解决方案：使用[Iscroll](http://cubiq.org/iscroll-5)，如：</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;wrapper&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ul&gt;</span><br><span class="line"></span><br><span class="line">               &lt;li&gt;&lt;/li&gt;</span><br><span class="line"></span><br><span class="line">               .....</span><br><span class="line"></span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;iscroll.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    var myscroll;</span><br><span class="line"></span><br><span class="line">    function loaded()&#123;</span><br><span class="line"></span><br><span class="line">        myscroll=new iScroll(&quot;wrapper&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    window.addEventListener(&quot;DOMContentLoaded&quot;,loaded,false);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//position定位</span><br><span class="line"></span><br><span class="line">//Android下弹出软键盘弹出时，影响absolute元素定位</span><br><span class="line"></span><br><span class="line">//解决方案:</span><br><span class="line"></span><br><span class="line">var ua = navigator.userAgent.indexOf(&apos;Android&apos;);</span><br><span class="line"></span><br><span class="line">if(ua&gt;-1)&#123;</span><br><span class="line"></span><br><span class="line">    $(&apos;.ipt&apos;).on(&apos;focus&apos;, function()&#123;</span><br><span class="line"></span><br><span class="line">        $(&apos;.css&apos;).css(&#123;&apos;visibility&apos;:&apos;hidden&apos;&#125;)</span><br><span class="line"></span><br><span class="line">    &#125;).on(&apos;blur&apos;, function()&#123;</span><br><span class="line"></span><br><span class="line">        $(&apos;.css&apos;).css(&#123;&apos;visibility&apos;:&apos;visible&apos;&#125;)</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="播放视频不全屏"><a href="#播放视频不全屏" class="headerlink" title="播放视频不全屏"></a>播放视频不全屏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line"></span><br><span class="line">1.ios7+支持自动播放</span><br><span class="line"></span><br><span class="line">2.支持Airplay的设备（如：音箱、Apple TV)播放</span><br><span class="line"></span><br><span class="line">x-webkit-airplay=&quot;true&quot;</span><br><span class="line"></span><br><span class="line">3.播放视频不全屏</span><br><span class="line"></span><br><span class="line">webkit-playsinline=&quot;true&quot;</span><br><span class="line"></span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;video x-webkit-airplay=&quot;true&quot; webkit-playsinline=&quot;true&quot; preload=&quot;auto&quot; autoplay src=&quot;http://&quot;&gt;&lt;/video&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="JS判断设备"><a href="#JS判断设备" class="headerlink" title="JS判断设备"></a>JS判断设备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function deviceType()&#123;</span><br><span class="line"></span><br><span class="line">    var ua = navigator.userAgent;</span><br><span class="line"></span><br><span class="line">    var agent = [&quot;Android&quot;, &quot;iPhone&quot;, &quot;SymbianOS&quot;, &quot;Windows Phone&quot;, &quot;iPad&quot;, &quot;iPod&quot;];</span><br><span class="line"></span><br><span class="line">    for(var i=0; i&lt;len,len = agent.length; i++)&#123;</span><br><span class="line"></span><br><span class="line">        if(ua.indexOf(agent[i])&gt;0)&#123;</span><br><span class="line"></span><br><span class="line">            break;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">deviceType();</span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;resize&apos;, function()&#123;</span><br><span class="line"></span><br><span class="line">    deviceType();</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="JS判断微信浏览器"><a href="#JS判断微信浏览器" class="headerlink" title="JS判断微信浏览器"></a>JS判断微信浏览器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function isWeixin()&#123;</span><br><span class="line"></span><br><span class="line">    var ua = navigator.userAgent.toLowerCase();</span><br><span class="line"></span><br><span class="line">    if(ua.match(/MicroMessenger/i)==&apos;micromessenger&apos;)&#123;</span><br><span class="line"></span><br><span class="line">        return true;</span><br><span class="line"></span><br><span class="line">    &#125;else&#123;</span><br><span class="line"></span><br><span class="line">        return false;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="android-2-3-bug"><a href="#android-2-3-bug" class="headerlink" title="android 2.3 bug"></a>android 2.3 bug</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//1.@-webkit-keyframes 需要以0%开始100%结束，0%的百分号不能去掉</span><br><span class="line"></span><br><span class="line">//2.after和before伪类无法使用动画animation</span><br><span class="line"></span><br><span class="line">//3.border-radius不支持%单位，如要兼容，可以给radius设置一下较大的值</span><br><span class="line"></span><br><span class="line">//4.translate百分比的写法和scale在一起会导致失效，例如：</span><br><span class="line"></span><br><span class="line">-webkit-transform: translate(-50%,-50%) scale(-0.5, 1)</span><br></pre></td></tr></table></figure>
+<h4 id="android-4-x-bug"><a href="#android-4-x-bug" class="headerlink" title="android 4.x bug"></a>android 4.x bug</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//1.三星 Galaxy S4中自带浏览器不支持border-radius缩写</span><br><span class="line"></span><br><span class="line">//2.同时设置border-radius和背景色的时候，背景色会溢出到圆角以外部分</span><br><span class="line"></span><br><span class="line">//3.部分手机(如三星)，a链接支持鼠标:visited事件，也就是说链接访问后文字变为紫色</span><br><span class="line"></span><br><span class="line">//4.android无法同时播放多音频audio</span><br></pre></td></tr></table></figure>
+<h4 id="消除transition闪屏"><a href="#消除transition闪屏" class="headerlink" title="消除transition闪屏"></a>消除transition闪屏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.css &#123;</span><br><span class="line"></span><br><span class="line">    -webkit-transform-style: preserve-3d;</span><br><span class="line"></span><br><span class="line">    -webkit-backface-visibility: hidden;</span><br><span class="line"></span><br><span class="line">    -webkit-perspective: 1000;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="开启硬件加速"><a href="#开启硬件加速" class="headerlink" title="开启硬件加速"></a>开启硬件加速</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//目前，像Chrome/Filefox/Safari/IE9+以及最新版本Opera都支持硬件加速，当检测到某个DOM元素应用了某些CSS规则时就会自动开启，从而解决页面闪白，保证动画流畅。</span><br><span class="line"></span><br><span class="line">.css &#123;</span><br><span class="line"></span><br><span class="line">    -webkit-transform: translate3d(0,0,0);</span><br><span class="line"></span><br><span class="line">    -moz-transform: translate3d(0,0,0);</span><br><span class="line"></span><br><span class="line">    -ms-transform: translate3d(0,0,0);</span><br><span class="line"></span><br><span class="line">    transform: translate3d(0,0,0);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h4><p>//1.禁止使用iframe（阻塞父文档onload事件）</p>
+<p>//2.禁止使用gif图片实现loading效果（降低CPU消耗，提升渲染性能）</p>
+<p>//使用CSS3代码代替JS动画；</p>
+<p>//开启GPU加速；</p>
+<p>//使用base64位编码图片(不小图而言，大图不建议使用)</p>
+<p>// 对于一些小图标，可以使用base64位编码，以减少网络请求。但不建议大图使用，比较耗费CPU。小图标优势在于：</p>
+<p>//1.减少HTTP请求；</p>
+<p>//2.避免文件跨域；</p>
+<p>//3.修改及时生效；<br><code>`</code><br>来源： <a href="http://mp.weixin.qq.com/s/JVUpsz9QHsNV0_7U-3HCMg" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/JVUpsz9QHsNV0_7U-3HCMg</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/CSS3滚动条美化CSS3滚动条皮肤/" rel="next" title="CSS3滚动条美化CSS3滚动条皮肤">
+                <i class="fa fa-chevron-left"></i> CSS3滚动条美化CSS3滚动条皮肤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/03/响应式图片/" rel="prev" title="响应式图片">
+                响应式图片 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjE2NC8xMjY5OQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="静然">
+            
+              <p class="site-author-name" itemprop="name">静然</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta基础知识："><span class="nav-number">1.</span> <span class="nav-text">Meta基础知识：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面"><span class="nav-number">1.1.</span> <span class="nav-text">H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空白页基本meta标签"><span class="nav-number">1.2.</span> <span class="nav-text">空白页基本meta标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他meta标签"><span class="nav-number">1.3.</span> <span class="nav-text">其他meta标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题："><span class="nav-number">2.</span> <span class="nav-text">常见问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端如何定义字体font-family"><span class="nav-number">2.1.</span> <span class="nav-text">移动端如何定义字体font-family</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打电话发短信写邮件怎么实现"><span class="nav-number">2.2.</span> <span class="nav-text">打电话发短信写邮件怎么实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端touch事件（区分webkit和winphone）"><span class="nav-number">2.3.</span> <span class="nav-text">移动端touch事件（区分webkit和winphone）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端click屏幕产生200-300ms的延时响应"><span class="nav-number">2.4.</span> <span class="nav-text">移动端click屏幕产生200-300ms的延时响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rentina显示屏原理及设计方案"><span class="nav-number">2.5.</span> <span class="nav-text">Rentina显示屏原理及设计方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击元素产生背景或边框怎么去掉"><span class="nav-number">2.6.</span> <span class="nav-text">点击元素产生背景或边框怎么去掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动端字体单位font-size选择px还是rem"><span class="nav-number">2.7.</span> <span class="nav-text">移动端字体单位font-size选择px还是rem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超实用的CSS样式"><span class="nav-number">2.8.</span> <span class="nav-text">超实用的CSS样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取消input在ios下，输入的时候英文首字母的默认大写"><span class="nav-number">2.9.</span> <span class="nav-text">取消input在ios下，输入的时候英文首字母的默认大写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手机拍照和上传图片"><span class="nav-number">2.10.</span> <span class="nav-text">手机拍照和上传图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#屏幕旋转的事件和样式"><span class="nav-number">2.11.</span> <span class="nav-text">屏幕旋转的事件和样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#audio元素和video元素在ios和andriod中无法自动播放"><span class="nav-number">2.12.</span> <span class="nav-text">audio元素和video元素在ios和andriod中无法自动播放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重力感应事件"><span class="nav-number">2.13.</span> <span class="nav-text">重力感应事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整"><span class="nav-number">2.14.</span> <span class="nav-text">微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定位的坑"><span class="nav-number">2.15.</span> <span class="nav-text">定位的坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#播放视频不全屏"><span class="nav-number">2.16.</span> <span class="nav-text">播放视频不全屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS判断设备"><span class="nav-number">2.17.</span> <span class="nav-text">JS判断设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS判断微信浏览器"><span class="nav-number">2.18.</span> <span class="nav-text">JS判断微信浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#android-2-3-bug"><span class="nav-number">2.19.</span> <span class="nav-text">android 2.3 bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#android-4-x-bug"><span class="nav-number">2.20.</span> <span class="nav-text">android 4.x bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消除transition闪屏"><span class="nav-number">2.21.</span> <span class="nav-text">消除transition闪屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启硬件加速"><span class="nav-number">2.22.</span> <span class="nav-text">开启硬件加速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染优化"><span class="nav-number">2.23.</span> <span class="nav-text">渲染优化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静然</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
