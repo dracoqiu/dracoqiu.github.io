@@ -218,3 +218,27 @@ try {
     dd($e);
 }
 ```
+all_policy 权限设置示例
+```json
+{
+  "Statement": [
+    {
+      "Action": [
+        "oss:ListBuckets",
+        "oss:GetBucketAcl"
+      ],
+      "Effect": "Allow",
+      "Resource": ["acs:oss:*:*:*"]
+    },
+    {
+      "Action": [
+        "oss:*"
+      ],
+      "Effect": "Allow",
+      "Resource": ["acs:oss:*:*:*"]
+    }
+  ],
+  "Version": "1"
+}
+
+```
