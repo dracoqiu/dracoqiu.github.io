@@ -465,7 +465,7 @@ session_start();
     - header("Location:网址");//直接跳转
     - header("refresh:3;url=http://www.jsdaima.com");//三秒后跳转
 2. 方法二：利用meta
-    - <meta http-equiv="refresh" content="3;url='helloworld.php'">
+    - `<meta http-equiv="refresh" content="3;url='helloworld.php'">`
 
 #### $str是一段html文本，使用正则表达式去除其中的所有js脚本
 
