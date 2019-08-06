@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="静然之旅" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="python网络爬虫">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬取猫眼正在热映电影">
+<meta property="og:url" content="http://yoursite.com/2019/04/29/python爬取猫眼正在热映电影/index.html">
+<meta property="og:site_name" content="静然之旅">
+<meta property="og:description" content="python网络爬虫">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/17/1636ea7b2ac1d8cf?w=795&h=347&f=png&s=51601">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/17/1636eb34a66c1149?w=540&h=402&f=png&s=22165">
+<meta property="og:updated_time" content="2019-08-06T13:16:08.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python爬取猫眼正在热映电影">
+<meta name="twitter:description" content="python网络爬虫">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/5/17/1636ea7b2ac1d8cf?w=795&h=347&f=png&s=51601">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/29/python爬取猫眼正在热映电影/">
+
+
+
+
+
+  <title>python爬取猫眼正在热映电影 | 静然之旅</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/dracoqiu" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静然之旅</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/29/python爬取猫眼正在热映电影/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静然">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静然之旅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python爬取猫眼正在热映电影</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T11:20:24+08:00">
+                2019-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,617
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>python网络爬虫<br><a id="more"></a></p>
+<blockquote>
+<p>用<code>python</code>写爬虫爬取需要的数据比较容易，以<code>Python</code>简洁的语法和一大波成熟的库，写起来相当的快</p>
+</blockquote>
+<p><strong>python的版本以及使用的库</strong></p>
+<ul>
+<li>Python 3.6.4</li>
+<li>requests</li>
+<li>lxml</li>
+</ul>
+<hr>
+<p>这次主要是爬取猫眼的热映电影，网址为<code>http://maoyan.com/films</code></p>
+<h5 id="新建个项目"><a href="#新建个项目" class="headerlink" title="新建个项目"></a>新建个项目</h5><p>我用 <strong>类(Class)</strong> 的方式创建，并初始化需要使用的参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaoYanHot</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.session = requests.session()  <span class="comment"># requests库的session对象能够帮我们跨请求保持某些参数，也会在同一个session实例发出的所有请求之间保持cookies</span></span><br><span class="line">        self.baseUrl = <span class="string">'http://maoyan.com/films'</span></span><br><span class="line">        <span class="comment"># 设置requests请求的headers参数来模拟浏览器访问</span></span><br><span class="line">        self.headers = &#123;</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'text/html;q=0.9,*/*;q=0.8'</span>,</span><br><span class="line">            <span class="string">'Accept-Charset'</span>: <span class="string">'ISO-8859-1,utf-8;q=0.7,*;q=0.3'</span>,</span><br><span class="line">            <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip'</span>,</span><br><span class="line">            <span class="string">'Connection'</span>: <span class="string">'close'</span>,</span><br><span class="line">            <span class="string">'Referer'</span>: <span class="keyword">None</span>  <span class="comment"># 注意如果依然不能抓取的话，这里可以设置抓取网站的host</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开始访问</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, pages=<span class="string">'?offset=0'</span>)</span>:</span></span><br><span class="line">        url = self.baseUrl + pages</span><br><span class="line">        print(<span class="string">'获取url：'</span> + url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MaoYanHot = MaoYanHot()</span><br><span class="line">MaoYanHot.run()</span><br></pre></td></tr></table></figure></p>
+<h4 id="获取正在热映电影首页数据"><a href="#获取正在热映电影首页数据" class="headerlink" title="获取正在热映电影首页数据"></a>获取正在热映电影首页数据</h4><p>写个<code>def</code>来获取网页内容，并在<code>run</code>里面调用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取网页内容</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHtmlContent</span><span class="params">(self, url)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        respone = self.session.get(url, headers=self.headers)</span><br><span class="line">        <span class="keyword">if</span> respone.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="comment"># 这里的编码取决于网页编码</span></span><br><span class="line">            <span class="comment"># 在decode的时候指定错误处理方式,有strict, ignore和replace三种处理方式，strict是默认的也就是抛出异常，ignore是忽略非法字符</span></span><br><span class="line">            <span class="keyword">return</span> respone.content.decode(<span class="string">'utf-8'</span>, <span class="string">'ignore'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">'err1:'</span> + str(e))</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p>在<strong>run</strong>里面调用<code>contents = self.getHtmlContent(url)</code></p>
+<p>如果顺利的话就会得到HTML内容，通过HTML发现dd标签并没有闭合需要处理下<br><img src="https://user-gold-cdn.xitu.io/2018/5/17/1636ea7b2ac1d8cf?w=795&amp;h=347&amp;f=png&amp;s=51601" alt><br>通过<code>etree.HTML</code>我发现并不能正确闭合dd标签，造成层层嵌套，写个例子测试下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">aaa = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;dl&gt;</span></span><br><span class="line"><span class="string">    &lt;dd&gt;1111</span></span><br><span class="line"><span class="string">    &lt;dd&gt;1111</span></span><br><span class="line"><span class="string">    &lt;dd&gt;1111</span></span><br><span class="line"><span class="string">    &lt;dd&gt;1111</span></span><br><span class="line"><span class="string">&lt;/dl&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">bbb = etree.HTML(aaa)</span><br><span class="line">print(etree.tostring(bbb))</span><br></pre></td></tr></table></figure></p>
+<p>打印的结果是<code>b&#39;&lt;html&gt;&lt;body&gt;&lt;dl&gt;\n    &lt;dd&gt;1111\n    &lt;dd&gt;1111\n    &lt;dd&gt;1111\n    &lt;dd&gt;1111\n&lt;/dd&gt;&lt;/dd&gt;&lt;/dd&gt;&lt;/dd&gt;&lt;/dl&gt;\n&lt;/body&gt;&lt;/html&gt;&#39;</code></p>
+<h4 id="把HTML转为XML"><a href="#把HTML转为XML" class="headerlink" title="把HTML转为XML"></a>把HTML转为XML</h4><p>手动闭合<code>dd</code>后通过<code>etree.HTML</code>把HTML转为XML，利用<a href="http://www.runoob.com/xpath/xpath-tutorial.html" target="_blank" rel="noopener"><code>xpath语法</code></a>可以快速匹配我们需要的节点。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把html转为xml</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">htmlToXml</span><span class="params">(self, contents)</span>:</span></span><br><span class="line">    <span class="comment"># 手动闭合dd标签</span></span><br><span class="line">    contents = contents.replace(<span class="string">'&lt;dd'</span>, <span class="string">'&lt;/dd&gt;&lt;dd'</span>)</span><br><span class="line">    <span class="keyword">return</span> etree.HTML(contents)</span><br></pre></td></tr></table></figure></p>
+<p>在<strong>run</strong>里面调用<code>xmls = self.htmlToXml(contents)</code><br>再来看看电影结构组成，如下图<br><img src="https://user-gold-cdn.xitu.io/2018/5/17/1636eb34a66c1149?w=540&amp;h=402&amp;f=png&amp;s=22165" alt><br>我们可以看到电影数据都是在<code>dd</code>里面，评分分为 <em>暂无评分</em> 和 <em>具体评分</em> 2种，父元素是<code>dl</code>，而它的<code>class[movie-list]</code>在页面只有一个。</p>
+<h4 id="获取电影的名称和评分"><a href="#获取电影的名称和评分" class="headerlink" title="获取电影的名称和评分"></a>获取电影的名称和评分</h4><p>接下来写个<code>def</code>分析需要的电影数据，如电影的名称和评分<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用xpath解析html内容</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parsingHtml</span><span class="params">(self, html)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 选择文档中的节点，而不考虑它们的位置。选取属性class="movie-list"的 dl 节点，这里返回的是dd列表集合</span></span><br><span class="line">            movieList = html.xpath(<span class="string">'//dl[@class="movie-list"]/dd'</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> len(movieList):</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> movieList:</span><br><span class="line">                    <span class="comment"># 从当前的 dd 节点选取属性data-act="movies-click"的 a 的节点的文本内容，这里匹配的是电影名称</span></span><br><span class="line">                    movieName = item.xpath(<span class="string">'.//a[@data-act="movies-click"]/text()'</span>)[<span class="number">0</span>]</span><br><span class="line">                    <span class="comment"># 从当前的 dd 节点选取属性class="channel-detail channel-detail-orange的 div 的节点的文本内容，这里匹配的是暂无评分</span></span><br><span class="line">                    moviePa = item.xpath(<span class="string">'.//div[@class="channel-detail channel-detail-orange"]/text()'</span>)</span><br><span class="line">                    <span class="comment"># moviePa没有值说明是有具体评分</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> moviePa:</span><br><span class="line">                        <span class="comment"># 匹配评分的整数</span></span><br><span class="line">                        integer = item.xpath(<span class="string">'.//div[@class="channel-detail channel-detail-orange"]/i[@class="integer"]/text()'</span>)</span><br><span class="line">                        <span class="comment"># 匹配评分的小数</span></span><br><span class="line">                        fraction = item.xpath(<span class="string">'./div[@class="channel-detail channel-detail-orange"]/i[@class="fraction"]/text()'</span>)</span><br><span class="line">                        moviePa = integer + fraction</span><br><span class="line">                    <span class="keyword">yield</span>(&#123;</span><br><span class="line">                        <span class="string">'movieName'</span>: movieName,</span><br><span class="line">                        <span class="string">'moviePa'</span>: <span class="string">''</span>.join(moviePa)</span><br><span class="line">                    &#125;)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'err2:'</span> + str(e))</span><br><span class="line">            <span class="keyword">return</span></span><br></pre></td></tr></table></figure></p>
+<p>在<strong>run</strong>里面调用<code>movieList = self.parsingHtml(xmls)</code>，通过<code>for</code>循环打印电影数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for item in movieList:</span><br><span class="line">    strs = &apos;电影：%s -- 评分： %s&apos; % (item[&apos;movieName&apos;], item[&apos;moviePa&apos;])</span><br><span class="line">    print(strs)</span><br></pre></td></tr></table></figure></p>
+<p>输出如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">获取url：http://maoyan.com/films?offset=0</span><br><span class="line">电影：复仇者联盟3：无限战争 -- 评分： 8.6</span><br><span class="line">电影：我是你妈 -- 评分： 8.2</span><br><span class="line">电影：后来的我们 -- 评分： 8.1</span><br><span class="line">电影：超时空同居 -- 评分： 8.8</span><br><span class="line">电影：寂静之地 -- 评分： 暂无评分</span><br><span class="line">电影：幕后玩家 -- 评分： 8.1</span><br><span class="line">电影：狂暴巨兽 -- 评分： 9.0</span><br><span class="line">电影：战犬瑞克斯 -- 评分： 8.2</span><br><span class="line">电影：巴霍巴利王2：终结 -- 评分： 8.7</span><br><span class="line">电影：亲爱的，我要和别人结婚了 -- 评分： 8.2</span><br><span class="line">电影：小公主艾薇拉与神秘王国 -- 评分： 5.7</span><br><span class="line">电影：昼颜 -- 评分： 暂无评分</span><br><span class="line">电影：头号玩家 -- 评分： 9.1</span><br><span class="line">电影：七号公馆 -- 评分： 暂无评分</span><br><span class="line">电影：冰雪女王3：火与冰 -- 评分： 8.2</span><br><span class="line">电影：侏罗纪世界2 -- 评分： 暂无评分</span><br><span class="line">电影：玛丽与魔女之花 -- 评分： 8.0</span><br><span class="line">电影：复仇者联盟4 -- 评分： 暂无评分</span><br><span class="line">电影：青年马克思 -- 评分： 8.4</span><br><span class="line">电影：狄仁杰之四大天王 -- 评分： 暂无评分</span><br><span class="line">电影：爱情公寓 -- 评分： 暂无评分</span><br><span class="line">电影：路过未来 -- 评分： 暂无评分</span><br><span class="line">电影：21克拉 -- 评分： 8.2</span><br><span class="line">电影：游侠索罗：星球大战外传 -- 评分： 暂无评分</span><br><span class="line">电影：午夜十二点 -- 评分： 3.5</span><br><span class="line">电影：龙在哪里？ -- 评分： 8.6</span><br><span class="line">电影：火魔高跟鞋 -- 评分： 暂无评分</span><br><span class="line">电影：动物世界 -- 评分： 暂无评分</span><br><span class="line">电影：犬之岛 -- 评分： 7.9</span><br><span class="line">电影：厉害了，我的国 -- 评分： 9.6</span><br></pre></td></tr></table></figure></p>
+<h4 id="自动获取下一页的数据"><a href="#自动获取下一页的数据" class="headerlink" title="自动获取下一页的数据"></a>自动获取下一页的数据</h4><p>自此已经可以请求网页并且获取需要的数据，接下来自动请求下一页。通过分析发现URl都是<code>http://maoyan.com/films</code>拼接<code>?offset=x</code>这个参数，x是当前页数的起始数，第一页<code>x</code>为0，第二页<code>x</code>为30，以此类推。刚好下一页的<code>href</code>就是这个参数。</p>
+<p>写个<code>def</code>获取下一个的参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配下一页</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNextPage</span><span class="params">(self, html)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 获取a元素的文本值为下一页的href属性</span></span><br><span class="line">        result = html.xpath(<span class="string">'//a[text()="下一页"]/@href'</span>)</span><br><span class="line">        <span class="keyword">return</span> result[<span class="number">0</span>] <span class="keyword">if</span> len(result) <span class="keyword">else</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">'err3:'</span> + str(e))</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p>在<strong>run</strong>里面通过递归的方式实现自动获取下一页的数据，并随机休眠5-20秒以预防被猫眼拒绝访问<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NextPage = self.getNextPage(xmls)</span><br><span class="line">    <span class="keyword">if</span> NextPage:</span><br><span class="line">        sleepTime = random.randint(<span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">        print(<span class="string">'休眠时间：%s'</span> % (sleepTime))</span><br><span class="line">        <span class="comment"># time.sleep(sleepTime)</span></span><br><span class="line">        sarr = list(range(sleepTime))</span><br><span class="line">        sarr.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line">        <span class="keyword">for</span> iss <span class="keyword">in</span> sarr:</span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">            print(<span class="string">'倒计时：'</span> + str(iss))</span><br><span class="line">        self.run(NextPage)</span><br></pre></td></tr></table></figure></p>
+<p>到这里已经基本完成了一个爬虫</p>
+<h4 id="设置cookie来获取需要登陆的网站的数据"><a href="#设置cookie来获取需要登陆的网站的数据" class="headerlink" title="设置cookie来获取需要登陆的网站的数据"></a>设置cookie来获取需要登陆的网站的数据</h4><p>有些网站内容必须需要登陆了才能访问，手动设置cookie的方式应该是比较省力的，通过浏览器登陆网页后，通过<code>F12</code> - <code>Network</code> - <code>Headers</code> - <code>Request Headers</code> 找到 <code>Cookie</code> 字段里面包含了cookie信息，写个<code>def</code>把字符串转为字典<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dictToCookie</span><span class="params">(self)</span>:</span></span><br><span class="line">    cookie_str = <span class="string">'uuid=1A6E888B4A4B29B16FBA1299108DBE9C716675A309C3BAA9D55E347DEB6E83EC; _lxsdk_cuid=16367a2e6a9c8-0d58eea69a4d89-3c3c5905-1fa400-16367a2e6a9c8; _lxsdk=1A6E888B4A4B29B16FBA1299108DBE9C716675A309C3BAA9D55E347DEB6E83EC; _csrf=89ce8482c620a863330c9ffcaf2e20579a55a76cbd8637ac62a2b9f72c172a7b; _lx_utm=utm_source%3DBaidu%26utm_medium%3Dorganic; lt=DiIgzaThdLC5XZdcq4joMkZRpD8AAAAA3QUAAIpNTDuzpXNwUmtKXTXO6i9RayLLEM7KoYPwtHI1-tbRoMyue5EEa87kRKXrkA9SxQ; lt.sig=HiWqeKJoko8oWV-YaVVbIHt4iXQ; __mta=46043675.1526452119497.1526534209978.1526537087635.59; _lxsdk_s=1636cb36a83-aff-08c-b8a%7C%7C2'</span></span><br><span class="line">    cookie_dict = dict()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> cookie_str.split(<span class="string">';'</span>):</span><br><span class="line">        key, value = item.split(<span class="string">'='</span>, <span class="number">1</span>)  <span class="comment"># 1代表只分一次，得到两个数据</span></span><br><span class="line">        cookie_dict[key] = value</span><br><span class="line">    <span class="keyword">return</span> cookie_dict</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>class</code>的<code>__init__</code>里面把字典转为<code>cookiejar</code>并设置<code>cookie</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cookie_dict = self.dictToCookie()</span><br><span class="line">self.session.cookies = requests.utils.cookiejar_from_dict(cookie_dict, cookiejar=<span class="keyword">None</span>, overwrite=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Date    : 2018-05-16 15:14:06</span></span><br><span class="line"><span class="comment"># @Author  : Your Name (you@example.org)</span></span><br><span class="line"><span class="comment"># @Link    : link</span></span><br><span class="line"><span class="comment"># @Version : 1.0.0</span></span><br><span class="line"><span class="comment"># 获取猫眼热门电影</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaoYanHot</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.session = requests.session()</span><br><span class="line">        self.baseUrl = <span class="string">'http://maoyan.com/films'</span></span><br><span class="line">        self.headers = &#123;</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'text/html;q=0.9,*/*;q=0.8'</span>,</span><br><span class="line">            <span class="string">'Accept-Charset'</span>: <span class="string">'ISO-8859-1,utf-8;q=0.7,*;q=0.3'</span>,</span><br><span class="line">            <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip'</span>,</span><br><span class="line">            <span class="string">'Connection'</span>: <span class="string">'close'</span>,</span><br><span class="line">            <span class="string">'Referer'</span>: <span class="keyword">None</span>  <span class="comment"># 注意如果依然不能抓取的话，这里可以设置抓取网站的host</span></span><br><span class="line">        &#125;</span><br><span class="line">        cookie_dict = self.dictToCookie()</span><br><span class="line">        self.session.cookies = requests.utils.cookiejar_from_dict(cookie_dict, cookiejar=<span class="keyword">None</span>, overwrite=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 转为字典</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dictToCookie</span><span class="params">(self)</span>:</span></span><br><span class="line">        cookie_str = <span class="string">'uuid=1A6E888B4A4B29B16FBA1299108DBE9C716675A309C3BAA9D55E347DEB6E83EC; _lxsdk_cuid=16367a2e6a9c8-0d58eea69a4d89-3c3c5905-1fa400-16367a2e6a9c8; _lxsdk=1A6E888B4A4B29B16FBA1299108DBE9C716675A309C3BAA9D55E347DEB6E83EC; _csrf=89ce8482c620a863330c9ffcaf2e20579a55a76cbd8637ac62a2b9f72c172a7b; _lx_utm=utm_source%3DBaidu%26utm_medium%3Dorganic; lt=DiIgzaThdLC5XZdcq4joMkZRpD8AAAAA3QUAAIpNTDuzpXNwUmtKXTXO6i9RayLLEM7KoYPwtHI1-tbRoMyue5EEa87kRKXrkA9SxQ; lt.sig=HiWqeKJoko8oWV-YaVVbIHt4iXQ; __mta=46043675.1526452119497.1526534209978.1526537087635.59; _lxsdk_s=1636cb36a83-aff-08c-b8a%7C%7C2'</span></span><br><span class="line">        cookie_dict = dict()</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> cookie_str.split(<span class="string">';'</span>):</span><br><span class="line">            key, value = item.split(<span class="string">'='</span>, <span class="number">1</span>)  <span class="comment"># 1代表只分一次，得到两个数据</span></span><br><span class="line">            cookie_dict[key] = value</span><br><span class="line">        <span class="keyword">return</span> cookie_dict</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取网页内容</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getHtmlContent</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            respone = self.session.get(url, headers=self.headers)</span><br><span class="line">            <span class="keyword">if</span> respone.status_code == <span class="number">200</span>:</span><br><span class="line">                <span class="keyword">return</span> respone.content.decode(<span class="string">'utf-8'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'err1:'</span> + str(e))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 把html转为xml</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">htmlToXml</span><span class="params">(self, contents)</span>:</span></span><br><span class="line">        <span class="comment"># 手动闭合dd标签</span></span><br><span class="line">        contents = contents.replace(<span class="string">'&lt;dd'</span>, <span class="string">'&lt;/dd&gt;&lt;dd'</span>)</span><br><span class="line">        <span class="keyword">return</span> etree.HTML(contents)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 利用xpath解析html内容</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parsingHtml</span><span class="params">(self, html)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            movieList = html.xpath(<span class="string">'//dl[@class="movie-list"]/dd'</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> len(movieList):</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> movieList:</span><br><span class="line">                    movieName = item.xpath(<span class="string">'.//a[@data-act="movies-click"]/text()'</span>)[<span class="number">0</span>]</span><br><span class="line">                    moviePa = item.xpath(<span class="string">'.//div[@class="channel-detail channel-detail-orange"]/text()'</span>)</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> moviePa:</span><br><span class="line">                        integer = item.xpath(<span class="string">'.//div[@class="channel-detail channel-detail-orange"]/i[@class="integer"]/text()'</span>)</span><br><span class="line">                        fraction = item.xpath(<span class="string">'./div[@class="channel-detail channel-detail-orange"]/i[@class="fraction"]/text()'</span>)</span><br><span class="line">                        moviePa = integer + fraction</span><br><span class="line">                    <span class="keyword">yield</span>(&#123;</span><br><span class="line">                        <span class="string">'movieName'</span>: movieName,</span><br><span class="line">                        <span class="string">'moviePa'</span>: <span class="string">''</span>.join(moviePa)</span><br><span class="line">                    &#125;)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'err2:'</span> + str(e))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 匹配下一页</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getNextPage</span><span class="params">(self, html)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            result = html.xpath(<span class="string">'//a[text()="下一页"]/@href'</span>)</span><br><span class="line">            <span class="keyword">return</span> result[<span class="number">0</span>] <span class="keyword">if</span> len(result) <span class="keyword">else</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(<span class="string">'err3:'</span> + str(e))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开始访问</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, pages=<span class="string">'?offset=18180'</span>)</span>:</span></span><br><span class="line">        url = self.baseUrl + pages</span><br><span class="line">        print(<span class="string">'获取url：'</span> + url)</span><br><span class="line">        contents = self.getHtmlContent(url)</span><br><span class="line">        <span class="keyword">if</span> contents:</span><br><span class="line">            xmls = self.htmlToXml(contents)</span><br><span class="line">            movieList = self.parsingHtml(xmls)</span><br><span class="line"></span><br><span class="line">            file_object = open(<span class="string">'movie.txt'</span>, <span class="string">'a+'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">            file_object.write(<span class="string">'获取url：'</span> + url + <span class="string">"\n"</span>)</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> movieList:</span><br><span class="line">                strs = <span class="string">'电影：%s -- 评分： %s'</span> % (item[<span class="string">'movieName'</span>], item[<span class="string">'moviePa'</span>])</span><br><span class="line">                print(strs)</span><br><span class="line">                file_object.write(strs + <span class="string">"\n"</span>)</span><br><span class="line">            file_object.close()</span><br><span class="line"></span><br><span class="line">            NextPage = self.getNextPage(xmls)</span><br><span class="line">            <span class="keyword">if</span> NextPage:</span><br><span class="line">                sleepTime = random.randint(<span class="number">5</span>, <span class="number">20</span>)</span><br><span class="line">                print(<span class="string">'休眠时间：%s'</span> % (sleepTime))</span><br><span class="line">                <span class="comment"># time.sleep(sleepTime)</span></span><br><span class="line">                sarr = list(range(sleepTime))</span><br><span class="line">                sarr.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line">                <span class="keyword">for</span> iss <span class="keyword">in</span> sarr:</span><br><span class="line">                    time.sleep(<span class="number">1</span>)</span><br><span class="line">                    print(<span class="string">'倒计时：'</span> + str(iss))</span><br><span class="line">                self.run(NextPage)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'网页内容获取失败'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MaoYanHot = MaoYanHot()</span><br><span class="line">MaoYanHot.run()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/26/sublime-text3配置/" rel="next" title="sublime text3配置">
+                <i class="fa fa-chevron-left"></i> sublime text3配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/27/PhpStorm配置/" rel="prev" title="PhpStorm配置">
+                PhpStorm配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjE2NC8xMjY5OQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="静然">
+            
+              <p class="site-author-name" itemprop="name">静然</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#新建个项目"><span class="nav-number">1.</span> <span class="nav-text">新建个项目</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#获取正在热映电影首页数据"><span class="nav-number"></span> <span class="nav-text">获取正在热映电影首页数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把HTML转为XML"><span class="nav-number"></span> <span class="nav-text">把HTML转为XML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取电影的名称和评分"><span class="nav-number"></span> <span class="nav-text">获取电影的名称和评分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动获取下一页的数据"><span class="nav-number"></span> <span class="nav-text">自动获取下一页的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置cookie来获取需要登陆的网站的数据"><span class="nav-number"></span> <span class="nav-text">设置cookie来获取需要登陆的网站的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整代码"><span class="nav-number"></span> <span class="nav-text">完整代码</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静然</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
